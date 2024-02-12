@@ -1,5 +1,7 @@
 # Kaizntree App
 
+# Hosted endpoints at http://18.217.166.192:8000/api/
+
 # Technology Stack:
 * Backend - Django
 * Frontend - React
