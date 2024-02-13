@@ -1,6 +1,7 @@
 # Kaizntree App
 
 # Hosted endpoints at http://18.217.166.192:8000/api/
+# Postman requests and responses published @ https://documenter.getpostman.com/view/14658536/2sA2r3b6xw
 
 # Technology Stack:
 * Backend - Django
