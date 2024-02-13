@@ -6,6 +6,7 @@
 * Backend - Django
 * Frontend - React
 * Database - Amazon RDS(MySQL)
+* Testing - Django APITestCase 
 * Hosting - AWS
 * Authentication & Permission - Django Token based authentication
 * Testing - Postman
