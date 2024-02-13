@@ -11,7 +11,6 @@ from rest_framework.authtoken.models import Token
 
 @api_view(['POST'])
 def login(request):
-    print('*************Inside login*******************')
     data = request.data
 
     serializer = LoginSerializer(data=data)
@@ -19,7 +18,7 @@ def login(request):
         user = authenticate(
             username=serializer.data['username'], password=serializer.data['password'])
         if not user:
-            print('login success')
+            print('login err')
             return Response({"message": "Invalid credentials!", "status": "false"}, status=status.HTTP_400_BAD_REQUEST)
         token = Token.objects.get_or_create(user=user)
         return Response({"message": "success", "token": str(token[0])}, status=status.HTTP_200_OK)
@@ -32,8 +31,9 @@ def signup(request):
     data = request.data
     serializer = SignupSerializer(data=data)
     if serializer.is_valid():
-        serializer.save()
-        token = Token.objects.get_or_create(user=serializer)
-        return Response({"data": serializer.data, "status": "true", "token": str(token[0])}, status=status.HTTP_201_CREATED)
+        user = serializer.save()
+        token = Token.objects.get_or_create(user=user)
+
+        return Response({"message": "User successfully logged in", "token": str(token[0])}, status=status.HTTP_201_CREATED)
     else:
         return Response({"message": serializer.errors, "status": "false"}, status=status.HTTP_400_BAD_REQUEST)

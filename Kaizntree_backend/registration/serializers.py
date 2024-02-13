@@ -36,4 +36,4 @@ class SignupSerializer(serializers.Serializer):
             username=validated_data['username'], email=validated_data['email'])
         user.set_password(validated_data['password'])
         user.save()
-        return validated_data
+        return user

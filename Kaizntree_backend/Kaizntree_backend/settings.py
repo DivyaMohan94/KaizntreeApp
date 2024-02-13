@@ -146,9 +146,7 @@ CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 CORS_ALLOW_CREDENTIALS = True
 
 CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1', 'http://localhost:3000']
-# ALLOWED_HOSTS = [
-# 'localhost', '127.0.0.1', '[::1]'
-# ],
+ALLOWED_HOSTS = ['localhost', '18.217.166.192']
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
